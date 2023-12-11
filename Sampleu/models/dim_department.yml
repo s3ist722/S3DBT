@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_department
+    description: department dimension. Each row is a department information
+    columns:
+      - name: departmentkey
+        description: The surrogate key of the dept.
+        tests:
+          - not_null
+          - unique
+      - name: departmentid
+        description: The business / source key of the department table
+        tests:
+          - not_null
+      - name: name
+        description: name of the department
+      - name: budget
+        description: budget of the department
+      - name: administrator
+        description: number of administrators
+

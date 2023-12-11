@@ -1,0 +1,20 @@
+version: 2
+
+models: 
+  - name: fact_course_evaluation
+    description: transaction. One row per course review rating given by students.
+    columns:
+      - name: coursekey
+        description: Dimension key for dim_course
+        tests:
+            - not_null
+      - name: course_id
+        description: course id
+      - name: avg_rating
+        description: average rating per course
+      - name: rating_count
+        description: total number of ratings per course
+      - name: rating
+        description: Non additive fact for rating of courses
+      - name: evaluation 
+        description: Feedback written by student (degenerate dimension).

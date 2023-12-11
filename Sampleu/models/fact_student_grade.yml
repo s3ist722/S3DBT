@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fact_student_grade
+    description: periodic snapshot. One row per student grade per course. Used to track student progress.
+    columns:
+      - name: enrollmentid
+        description: pk for source table studentgrade.
+        tests:
+            - unique
+            - not_null
+      - name: studentkey
+        description: Dimension key for dim_student.
+      - name: coursekey
+        description: Dimension key for dim_course
+      - name: gpa
+        description: Average gpa of a student
+      - name: avggrade
+        description: Average grade of class per course
+      - name: grade
+        description: Student grade for each course   
+      

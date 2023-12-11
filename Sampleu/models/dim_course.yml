@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_course
+    description: one row per course tought
+    columns:
+      - name: coursekey
+        description: The surrogate key of the course
+        tests:
+          - not_null
+          - unique
+      - name: courseid
+        description: The business / source key of the course
+        tests:
+          - not_null
+      - name: coursetitle
+        description: title of the course
+      - name: credits
+        description: credits for each course
+      - name: departmentkey
+        description: Dimension key for dim_department
+      - name: courseurl
+        description: link for online course
+      - name: courselocation
+        description: location for onsite course
+      - name: lec_days
+        description: weekly schedule of each course
+      - name: lec_classroom
+        description: classroom number for in-person lectures
+      - name: lec_building
+        description: name of the building where classroom is located
+      - name: lec_time
+        description: respective time schedule of the lecture
+      - name: time_of_day
+        description: tells us when lecture is (early morning/morning/afternoon or evening lecture)

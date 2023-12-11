@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fact_assigned_instructor
+    description: accumulating snapshot. One row per instructor. Used to track the instructor's profile.
+    columns:
+      - name: instructorkey
+        description: Dimension key for dim_instructor
+      - name: coursekey
+        description: Dimension key for dim_course
+      - name: departmentkey
+        description: Dimension key for dim_department
+      - name: hiredatekey
+        description: Dimension key for dim_date
+      - name: courseid
+        description: course id
+      - name: instructor_id
+        description: instructor id
+      - name: course_name
+        description: name of the course offerec by instructor
+      - name: department_name
+        description: name of the department
+      - name: instructor_name
+        description: name of instructor
+      - name: hiredate
+        description: date on which instructor was hired
