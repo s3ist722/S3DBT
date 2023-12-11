@@ -1,0 +1,74 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+              
+  
+  - name: sampleu
+    database: raw
+    schema: sampleu
+
+    tables:
+      - name: course
+        columns:
+          - name: courseid
+            tests:
+              - unique
+
+      - name: courseinstructor
+        columns:
+          - name: courseid
+            tests:
+              - unique
+
+      - name: department
+        columns:
+          - name: departmentid
+            tests:
+              - unique
+
+      - name: officeassignment
+        columns:
+          - name: instructorid
+            tests:
+              - unique  
+
+      - name: onlinecourse
+        columns:
+          - name: courseid
+            tests:
+              - unique
+
+      - name: onsitecourse
+        columns:
+          - name: courseid
+            tests:
+              - unique      
+
+      - name: person
+        columns:
+          - name: personid
+            tests:
+              - unique 
+
+      - name: studentgrade
+        columns:
+          - name: enrollmentid
+            tests:
+              - unique 
+
+      - name: courseevaluations
+        tests:
+                - dbt_utils.unique_combination_of_columns:
+                    combination_of_columns:
+                      - courseid
+                      - evaluation

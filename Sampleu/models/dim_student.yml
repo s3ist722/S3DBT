@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_student
+    description: student dimension. one row per student
+    columns:
+      - name: studentkey
+        description: The surrogate key of the student
+        tests:
+          - not_null
+          - unique
+      - name: studentid
+        description: The business / source key of the student table
+        tests:
+          - not_null
+      - name: fullname
+        description: full name of the student
+      - name: enrollment_date
+        description: enrollment date

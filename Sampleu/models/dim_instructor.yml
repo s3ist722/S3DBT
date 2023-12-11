@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_instructor
+    description: instructor dimension. one row per instructor
+    columns:
+      - name: instructorkey
+        description: The surrogate key of the instructor
+        tests:
+          - not_null
+          - unique
+      - name: instructorid
+        description: The business / source key of the instructor table
+        tests:
+          - not_null
+      - name: instructor_name
+        description: full name of the instructor
+      - name: hiredate
+        description: date on which professor was hired
+      - name: experience
+        description: years of experience in our university
+      - name: instructor_office_loc
+        description: office location
+      - name: instructor_office_no.
+        description: room number of the office
+      - name: instructor_office_building
+        description: instructor office building
+        
+
