@@ -1,34 +1,3 @@
-  -- with stg_course as (
---     select * from {{source("sampleu",'course')}}
--- ),
--- stg_onsitecourse as (
---     select * from {{source("sampleu",'onsitecourse')}}
--- ),
--- stg_onlinecourse as (
---     select * from {{source("sampleu",'onlinecourse')}}
--- )
--- select 
---     {{dbt_utils.default__generate_surrogate_key(['c.CourseID'])}}
---         as Coursekey,
---     c.CourseID,
---     c.Title as Course_title,
---     c.Credits as course_credit,
---     c.DepartmentID,
---     ol.URL as lecture_url,
---     os.location as lecture_loc,
---     TRIM(SPLIT_PART(os.location, ' ', 1)) AS Lec_classroom_No,
---     -- Get the building name (assumed to be the second part after the space) and append 'hall'
---     CONCAT(TRIM(SPLIT_PART(os.location, ' ', 2)), ' hall') AS Lec_building,
---     os.Days as lec_days,
---     CASE WHEN os.Days LIKE '%M%' THEN 'YES' ELSE 'NO' END AS Monday,
---     CASE WHEN os.Days LIKE '%T%' THEN 'YES' ELSE 'NO' END AS Tuesday,
---     CASE WHEN os.Days LIKE '%W%' THEN 'YES' ELSE 'NO' END AS Wednesday,
---     CASE WHEN os.Days LIKE '%H%' THEN 'YES' ELSE 'NO' END AS Thursday,
---     CASE WHEN os.Days LIKE '%F%' THEN 'YES' ELSE 'NO' END AS Friday
--- from stg_course c 
---     left join stg_onlinecourse ol on ol.CourseID = c.CourseID
---     left join stg_onsitecourse os on os.CourseID = c.CourseID
-
 with stg_course as (
     select * from {{ source("sampleu",'course') }}
 ),
