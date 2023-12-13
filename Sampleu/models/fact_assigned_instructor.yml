@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fact_assigned_instructor
-    description: accumulating snapshot. One row per instructor. Used to track the instructor's profile.
+    description: Transaction. One row per instructor. Used to track the instructor's profile.
     columns:
       - name: instructorkey
         description: Dimension key for dim_instructor
