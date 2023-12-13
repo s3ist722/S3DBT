@@ -10,7 +10,6 @@ select
     i.personID as instructorid,
     concat(i.LastName ,', ' , i.FirstName) as Instructor_name,
     i.HireDate,
-    DATEDIFF(year, i.HireDate, GETDATE()) as experience,
     oa.location as instructor_office_loc,
     TRIM(SPLIT_PART(oa.location, ' ', 1)) AS instructor_office_No,
     CONCAT(TRIM(SPLIT_PART(oa.location, ' ', 2)), ' hall') AS instructor_office_building

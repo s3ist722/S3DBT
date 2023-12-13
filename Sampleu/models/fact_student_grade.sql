@@ -43,7 +43,6 @@ SELECT
     sg.StudentKey,
     sg.StudentID,
     sg.CourseID,
-    c.title as course_name,
     sg.CourseKey,
     gc.GPA,
     sg.Grade,
